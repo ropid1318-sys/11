@@ -1,0 +1,10 @@
+{
+  "name": "LAND-FI",
+  "short_name": "LAND-FI",
+  "description": "토지보상 통합 금융 플랫폼",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#E8EEF6",
+  "theme_color": "#E8EEF6",
+  "lang": "ko"
+}

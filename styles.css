@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --lf-bg: #e8eef6;
+  --lf-surface: #ffffff;
+  --lf-text: #0f172a;
+  --lf-muted: rgba(30, 41, 59, 0.55);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: var(--lf-bg);
+  color: var(--lf-text);
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+.app-root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 600px;
+  min-height: 100dvh;
+  background: var(--lf-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(15, 23, 42, 0.12);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e8590c;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #e8590c;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  outline: none;
+}
+
+button {
+  outline: none;
+  transition: opacity 0.15s;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+button:disabled {
+  opacity: 0.85;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%) translateY(12px);
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 0.5px solid rgba(14, 99, 255, 0.28);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
